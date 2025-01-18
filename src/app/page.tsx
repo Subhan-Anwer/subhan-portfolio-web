@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import { Metadata } from "next";
 
 export default function Home() {
   return (
@@ -7,3 +8,9 @@ export default function Home() {
     </>
   );
 }
+
+
+export const metadata: Metadata = {
+  title: "Subhan Portfolio",
+  description: "Developed by Subhan Sheikh with nextjs",
+};
