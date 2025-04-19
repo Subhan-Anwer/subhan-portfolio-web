@@ -1,13 +1,4 @@
 import React from 'react'
-import { FaReact } from 'react-icons/fa'
-import { IoLogoNodejs } from 'react-icons/io'
-import { SiTypescript } from 'react-icons/si'
-import { SiMongodb } from 'react-icons/si'
-import { TbBrandNextjs } from 'react-icons/tb'
-
-import { FaHtml5 } from "react-icons/fa6";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { IoLogoJavascript } from "react-icons/io5";
 import Image from 'next/image'
 
 const stackItems = [
