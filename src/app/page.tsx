@@ -1,10 +1,12 @@
 import Hero from "@/components/Hero";
+import Stack from "@/components/Stack";
 import { Metadata } from "next";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <Stack />
     </>
   );
 }

@@ -1,8 +1,6 @@
 'use client'
 import { animate, motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import React, { useEffect } from 'react'
-import obj from '@/assets/obj1.png'
-import profilePic from '@/assets/profilepic.png'
 import Image from 'next/image';
 import { FiArrowRight } from 'react-icons/fi';
 
@@ -38,32 +36,36 @@ const Hero = () => {
           Open for Work
         </span>
 
-        <h1 className='text-white/40 text-4xl sm:text-5xl md:text-7xl font-black mb-1'>Hi, I am</h1>
-        <h1 className='max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent text-4xl sm:text-5xl md:text-7xl'>Subhan Anwer</h1>
+        <h1 className='text-white/40 text-3xl sm:text-5xl md:text-7xl font-black sm:mb-1 mb-0'>Hi, I am</h1>
+        <h1 className='max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black sm:leading-tight leading-[42px] text-transparent text-4xl sm:text-5xl md:text-7xl'>Subhan Anwer</h1>
 
         <Image
-          src={profilePic}
+          src='/profilepic.png'
           alt='profile pic'
           width={250}
+          height={250}
         />
         <div className='flex flex-col sm:flex-row bg-white/10 shadow-xl p-3 rounded-3xl justify-center items-center sm:space-x-2 gap-3 mb-4 sm:mt-0 mt-6'>
           <div className="flex items-center justify-center space-x-2">
             <Image
-              src={obj}
+              src='/obj1.png'
               alt='object'
               width={30}
+              height={30}
               className='rounded-2xl mx-auto'
             />
             <Image
-              src={obj}
+              src='/obj1.png'
               alt='object'
               width={30}
+              height={30}
               className='rounded-2xl mx-auto'
             />
             <Image
-              src={obj}
+              src='/obj1.png'
               alt='object'
               width={30}
+              height={30}
               className='rounded-2xl mx-auto'
             />
           </div>
