@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import CodeStats from "@/components/CodeStats";
 import LogoAnimation from "@/components/LogoAnimation";
 import Portfolio from "@/components/Portfolio";
 import Stack from "@/components/Stack";
@@ -11,6 +12,7 @@ export default function Home() {
       <Stack />
       <LogoAnimation />
       <Portfolio />
+      <CodeStats />
     </>
   );
 }
