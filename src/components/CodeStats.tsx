@@ -1,6 +1,5 @@
 'use client'
-import { delay, motion, useInView } from 'framer-motion'
-import { div } from 'framer-motion/client'
+import { motion, useInView } from 'framer-motion'
 import React from 'react'
 
 
