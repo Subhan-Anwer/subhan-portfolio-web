@@ -10,6 +10,7 @@ const COLORS_TOP = ["#1367C6", "#13FFAA", "#CE84CF", "#DD335C"]
 const projects = [
     {
         id: 1,
+        year: "2024",
         title: "Start - Modern Digital Agency Website",
         description: "A modern and responsive website for a digital startup agency, focused on clean design and smooth user experience.",
         image: "/website-1.png",
@@ -17,6 +18,7 @@ const projects = [
     },
     {
         id: 2,
+        year: "2024",
         title: "Foodtuck - Restaurant Website",
         description: "A vibrant and tasty-looking website for a restaurant, designed to showcase menus, offers, and attract hungry visitors.",
         image: "/website-2.png",
@@ -24,6 +26,7 @@ const projects = [
     },
     {
         id: 3,
+        year: "2025",
         title: "Shopit - Clothing E-Commerce Store",
         description: "A stylish clothing eCommerce site with product listings, cart features, and a mobile-friendly layout.",
         image: "/website-3.png",
@@ -56,7 +59,7 @@ const Portfolio = () => {
             <div className='max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 '>
 
                 <div>
-                    <h2 className='text-xl font-bold mb-10'>Featured <span className='text-gray-400'>Projects</span></h2>
+                    <h2 className='text-6xl font-bold mb-14'>Featured <span className='text-purple-400'>Projects</span></h2>
 
                     {projects.map((project) => (
                         <div
@@ -64,7 +67,8 @@ const Portfolio = () => {
                             onClick={() => setSelectedProject(project)}
                             className='cursor-pointer mb-8 group'
                         >
-                            <h3 className={`text-3xl font-semibold group-hover:text-gray-400 transition-colors ${selectedProject.id === project.id ? "text-gray-200" : ""} duration-300`}>{project.title}</h3>
+                            <p className='text-gray-400 text-lg mb-2'>{project.year}</p>
+                            <h3 className={`text-3xl font-semibold group-hover:text-purple-400 transition-colors ${selectedProject.id === project.id ? "text-purple-300" : ""} duration-300`}>{project.title}</h3>
 
                             {selectedProject.id === project.id && (
                                 <div className='border-b-2 border-gray-200 my-4'>
@@ -85,7 +89,7 @@ const Portfolio = () => {
                     <Image
                         src={selectedProject.image}
                         alt={selectedProject.title}
-                        className="rounded-xl shadow-lg transition-opacity duration-500 ease-in-out"
+                        className="rounded-xl mt-32 shadow-lg transition-opacity duration-500 ease-in-out"
                         width={800}
                         height={450}
                     />
