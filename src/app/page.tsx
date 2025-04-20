@@ -1,4 +1,6 @@
 import Hero from "@/components/Hero";
+import LogoAnimation from "@/components/LogoAnimation";
+import Portfolio from "@/components/Portfolio";
 import Stack from "@/components/Stack";
 import { Metadata } from "next";
 
@@ -7,6 +9,8 @@ export default function Home() {
     <>
       <Hero />
       <Stack />
+      <LogoAnimation />
+      <Portfolio />
     </>
   );
 }

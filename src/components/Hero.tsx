@@ -24,7 +24,7 @@ const Hero = () => {
 
 
   return (
-    <motion.section
+    <motion.section id='home'
       style={{
         backgroundImage
       }}
