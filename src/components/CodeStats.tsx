@@ -45,7 +45,7 @@ const CodeStats = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8 }}
-            className='container max-w-full mx-auto px-12 py-32 text-white glass'
+            className='container max-w-full mx-auto px-6 md:px-12 py-32 text-white glass'
         >
             <motion.h2
                 initial={{ opacity: 0, y: 20 }}
