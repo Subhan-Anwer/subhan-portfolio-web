@@ -12,7 +12,7 @@ const map = "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d226.2654730132
 
 const Contact = () => {
     return (
-        <section id='contact' className='py-32 text-whitemax-w-[1200px] mx-auto px-8'>
+        <section id='contact' className='overflow-x-clip py-32 text-whitemax-w-[1200px] mx-auto px-8'>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -41,10 +41,10 @@ const Contact = () => {
                             <p className='text-lg text-gray-300'>Phone</p>
                             <Link
                                 href={phoneLink}
-                                className='text-2xl font-semibold text-white hover:text-gray-400 transition duration-300 flex items-center gap-2'
+                                className='text-2xl font-semibold text-white flex items-center gap-2'
                                 target='_blank'
                             >
-                                <p>{phone}</p>
+                                <p className='hover:text-gray-400 transition-colors duration-300'>{phone}</p>
                                 <span className='text-gray-500'>↗</span>
                             </Link>
                         </div>
@@ -53,9 +53,10 @@ const Contact = () => {
                             <p className='text-lg text-gray-300'>Email</p>
                             <Link
                                 href={emailLink}
-                                className='text-2xl font-semibold text-white hover:text-gray-400 transition duration-300 flex items-center '
+                                className='text-2xl font-semibold text-white  flex items-center gap-2'
                             >
-                                <p style={{ wordBreak: 'break-word' }}>{email}</p>
+                                <p className='hover:text-gray-400 transition duration-300' style={{ wordBreak: 'break-word' }}>{email}</p>
+                                <span className='text-gray-500'>↗</span>
                             </Link>
                         </div>
 
