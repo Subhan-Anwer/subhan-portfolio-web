@@ -36,12 +36,16 @@ const Hero = () => {
           Open for Work
         </span>
 
-        <h1 className='text-white/40 text-3xl sm:text-5xl md:text-7xl font-black sm:mb-1 mb-0'>Hi, I am</h1>
+        <p className='text-white/40 text-3xl sm:text-5xl md:text-7xl font-black sm:mb-1 mb-0'>Hi, I am</p>
         <h1 className='max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black sm:leading-tight leading-[42px] text-transparent text-4xl sm:text-5xl md:text-7xl'>Subhan Anwer</h1>
+        {/* SEO tags */}
+        <p className="sr-only">
+          Frontend Developer in Karachi, Website Developer, Next.js Expert, Tailwind CSS UI Designer, JavaScript Coder, Subhan Anwer Portfolio
+        </p>
 
         <Image
           src='/profilepic.png'
-          alt='profile pic'
+          alt='Subhan Anwer profile photo - frontend website developer'
           width={250}
           height={250}
         />
@@ -72,7 +76,7 @@ const Hero = () => {
           <p>80+ Happy Clients</p>
         </div>
 
-        <p className='my-6 max-w-xl '>Fullstack Developer based in Karachi, with over 5 years of experience</p>
+        <p className='my-6 max-w-xl '>Frontend & Website Developer from Karachi, with 2+ years of experience</p>
 
         <motion.button
           style={{
