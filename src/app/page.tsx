@@ -5,6 +5,7 @@ import Portfolio from "@/components/Portfolio";
 import Stack from "@/components/Stack";
 import { Metadata } from "next";
 import Services from "@/components/Services";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Portfolio />
       <CodeStats />
       <Services />
+      <Contact />
     </>
   );
 }
