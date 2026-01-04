@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Subhan Anwer - Portfolio Website
 
-## Getting Started
+Welcome to my personal portfolio website repository.  
+This website highlights my skills, featured projects, and journey as a **Frontend Developer** focused on building modern, responsive, and high-quality user interfaces.
 
-First, run the development server:
+---
+
+## 👋 About Me
+
+Hi, I’m **Subhan Anwer**, a **Frontend Developer** who loves building clean, responsive, and user-friendly websites.  
+I specialize in crafting modern web experiences using **Next.js** and **Tailwind CSS**, with a strong focus on performance, layout, and usability.
+
+I’m constantly learning, experimenting, and improving my skills to build better products every day.
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**
+- HTML  
+- CSS  
+- JavaScript  
+- TypeScript  
+- Next.js  
+- Tailwind CSS  
+
+**Tools & Version Control**
+- Git  
+- GitHub  
+
+**Backend (Learning / Basic)**
+- Python  
+- FastAPI  
+
+---
+
+## 📂 Website Sections
+
+My portfolio website includes:
+
+- **Intro** – A brief introduction and first impression  
+- **My Stack** – Technologies I currently work with  
+- **Featured Projects** – Selected work with a link to view all projects  
+- **Code Stats** – GitHub activity and coding consistency  
+- **Services** – What I can help you build  
+- **Get in Touch** – Contact details for collaboration and opportunities  
+
+> This is a **static portfolio website**, optimized for performance and clarity.
+
+---
+
+## 🚀 Live Website
+
+🔗 **Portfolio:**  
+https://subhan-anwer-portfolio.vercel.app/
+
+---
+
+## 🌟 Featured Projects
+
+> These projects represent my current work.  
+> I’ll continue updating this section as I build more advanced and impactful products.
+
+### 🏢 Start — Modern Digital Agency Website
+A modern and responsive website for a digital startup agency, focused on clean design, smooth user experience, and professional presentation.
+
+### 🍔 Foodtuck — Restaurant Website
+A vibrant and visually appealing restaurant website designed to showcase menus, offers, and attract hungry visitors with an engaging UI.
+
+### 👕 Shopit — Clothing E-Commerce Store
+A stylish clothing eCommerce website featuring product listings, cart functionality, and a fully responsive layout.
+
+---
+
+## ⚙️ Running Locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/Subhan-Anwer/portfolio-website.git
+cd portfolio-website
