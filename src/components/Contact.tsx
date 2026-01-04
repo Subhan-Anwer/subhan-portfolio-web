@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 const email = "subhananwersheikh@gmail.com";
 const emailLink = "mailto:subhananwersheikh@gmail.com";
-const phone = "+92-323-2063869";
-const phoneLink = "https://wa.me/+923232063869";
+const phone = "+92-319-2312746";
+const phoneLink = "https://wa.me/+923192312746";
 const map = "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d226.26547301322472!2d67.07400604985085!3d24.855392802805493!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1745378213449!5m2!1sen!2s"
 
 
