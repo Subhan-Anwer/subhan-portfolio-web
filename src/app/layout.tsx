@@ -6,8 +6,8 @@ import Navbar from "@/components/NavBar";
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "400", "700", "900"] });
 
 export const metadata: Metadata = {
-  title: "Subhan Portfolio",
-  description: "Developed by Subhan Sheikh with nextjs",
+  title: "Subhan Anwer Portfolio",
+  description: "Developed by Subhan Anwer with nextjs",
 };
 
 export default function RootLayout({
