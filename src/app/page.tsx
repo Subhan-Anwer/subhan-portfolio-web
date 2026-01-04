@@ -8,18 +8,18 @@ export const metadata: Metadata = {
     "website development",
     "freelance web developer",
     "Next.js developer",
-    "portfolio"
+    "portfolio",
   ],
   authors: [{ name: "Subhan Anwer" }],
   openGraph: {
-    title: "Subhan Anwer | Freelance Frontend Developer",
+    title: "Subhan Anwer | Frontend & Website Developer",
     description:
       "Expert in responsive, SEO-optimized websites using Next.js, Tailwind CSS and Typescript.",
-    url: "https://subhan-portfolio.vercel.app/",
+    url: "https://subhan-anwer-portfolio.vercel.app/",
     siteName: "Subhan Anwer Portfolio",
     images: [
       {
-        url: "/profilepic.png", // 🔁 Ensure this exists in your /public folder
+        url: "/profilepic.png",
         width: 1200,
         height: 630,
       },
