@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Subhan Anwer | Website Developer",
     description:
       "Looking to hire a freelance frontend developer? Let&quot;s build something amazing together.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
 };
 
