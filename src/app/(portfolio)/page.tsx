@@ -37,25 +37,29 @@ export const metadata: Metadata = {
 
 
 
+import { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CodeStats from "@/components/CodeStats";
 import LogoAnimation from "@/components/LogoAnimation";
 import Portfolio from "@/components/Portfolio";
 import Stack from "@/components/Stack";
-import { Metadata } from "next";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
+import { getPersonalDetails } from "@/sanity/lib/getPersonalDetails";
+import { PersonalDetails } from "../../../sanity.types";
 
-export default function Home() {
+export default async function Home() {
+  const personalDetails: PersonalDetails = await getPersonalDetails();
+  
   return (
     <>
-      <Hero />
+      <Hero personalDetails={personalDetails} />
       <Stack />
       <LogoAnimation />
       <Portfolio />
       <CodeStats />
       <Services />
-      <Contact />
+      <Contact personalDetails={personalDetails} />
     </>
   );
 }

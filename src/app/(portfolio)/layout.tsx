@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google"
-import "./globals.css";
+import "@/app/globals.css";
 import Navbar from "@/components/NavBar";
+import { SanityLive } from "@/sanity/lib/live";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["100", "200", "400", "700", "900"] });
 
@@ -17,11 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className} antialiased bg-black`}
-      >
-        <Navbar />
-        {children}
+      <body className={`${poppins.className} antialiased bg-black`}>
+        <main>
+          <Navbar />
+          {children}
+        </main>
+        <SanityLive />
       </body>
     </html>
   );

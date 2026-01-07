@@ -2,7 +2,7 @@
 import { animate, useMotionTemplate, motion, useMotionValue } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 const COLORS_TOP = ["#1367C6", "#13FFAA", "#CE84CF", "#DD335C"]
 

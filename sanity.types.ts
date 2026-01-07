@@ -24,6 +24,18 @@ export type Services = {
   serialOrder?: number;
 };
 
+export type CodeStats = {
+  _id: string;
+  _type: "codeStats";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  statNumber?: string;
+  statTitle?: string;
+  statDescription?: string;
+  serialOrder?: number;
+};
+
 export type TechStack = {
   _id: string;
   _type: "techStack";
@@ -62,17 +74,6 @@ export type SanityImageHotspot = {
   width?: number;
 };
 
-export type CodeStats = {
-  _id: string;
-  _type: "codeStats";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  statNumber?: string;
-  statTitle?: string;
-  statDescription?: string;
-};
-
 export type PersonalDetails = {
   _id: string;
   _type: "personalDetails";
@@ -80,7 +81,7 @@ export type PersonalDetails = {
   _updatedAt: string;
   _rev: string;
   name?: string;
-  image?: {
+  profileImage?: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -214,10 +215,10 @@ export type Slug = {
 
 export type AllSanitySchemaTypes =
   | Services
+  | CodeStats
   | TechStack
   | SanityImageCrop
   | SanityImageHotspot
-  | CodeStats
   | PersonalDetails
   | SanityImagePaletteSwatch
   | SanityImagePalette
@@ -233,7 +234,7 @@ export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: src\sanity\lib\getCodeStats.ts
 // Variable: CODE_STATS_QUERY
-// Query: *[_type == "codeStats"]
+// Query: *[_type == "codeStats"] | order(serialOrder asc)
 export type CODE_STATS_QUERY_RESULT = Array<{
   _id: string;
   _type: "codeStats";
@@ -243,6 +244,7 @@ export type CODE_STATS_QUERY_RESULT = Array<{
   statNumber?: string;
   statTitle?: string;
   statDescription?: string;
+  serialOrder?: number;
 }>;
 
 // Source: src\sanity\lib\getPersonalDetails.ts
@@ -255,7 +257,7 @@ export type PERSONAL_DETAILS_QUERY_RESULT = {
   _updatedAt: string;
   _rev: string;
   name?: string;
-  image?: {
+  profileImage?: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -301,11 +303,15 @@ export type SERVICES_QUERY_RESULT = Array<{
 
 // Source: src\sanity\lib\getTechStack.ts
 // Variable: TECH_STACK_QUERY
-// Query: *[_type == "techStack"] | order(serialOrder asc) {                    _id,                    techName,                    techLogo,                    serialOrder                }
+// Query: *[_type == "techStack"] | order(serialOrder asc)
 export type TECH_STACK_QUERY_RESULT = Array<{
   _id: string;
-  techName: string | null;
-  techLogo: {
+  _type: "techStack";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  techName?: string;
+  techLogo?: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -316,17 +322,17 @@ export type TECH_STACK_QUERY_RESULT = Array<{
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     _type: "image";
-  } | null;
-  serialOrder: number | null;
+  };
+  serialOrder?: number;
 }>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '\n            *[_type == "codeStats"]\n        ': CODE_STATS_QUERY_RESULT;
-    '\n            *[_type == "personalDetails"][0] \n        ': PERSONAL_DETAILS_QUERY_RESULT;
+    '\n            *[_type == "codeStats"] | order(serialOrder asc)\n        ': CODE_STATS_QUERY_RESULT;
+    '\n            *[_type == "personalDetails"][0]\n            \n        ': PERSONAL_DETAILS_QUERY_RESULT;
     '\n            *[_type == "services"] | order(serialOrder asc)\n        ': SERVICES_QUERY_RESULT;
-    '\n            *[_type == "techStack"] | order(serialOrder asc) {\n                    _id,\n                    techName,\n                    techLogo,\n                    serialOrder\n                }\n        ': TECH_STACK_QUERY_RESULT;
+    '\n            *[_type == "techStack"] | order(serialOrder asc)\n        ': TECH_STACK_QUERY_RESULT;
   }
 }

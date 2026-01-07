@@ -1,28 +1,34 @@
-'use client'
-import { animate, motion, useMotionTemplate, useMotionValue } from 'framer-motion';
-import React, { useEffect } from 'react'
-import Image from 'next/image';
-import { FiArrowRight } from 'react-icons/fi';
-import Link from 'next/link';
+"use client";
+import {
+  animate,
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+} from "framer-motion";
+import { useEffect } from "react";
+import Image from "next/image";
+import { FiArrowRight } from "react-icons/fi";
+import Link from "next/link";
+import { PersonalDetails } from "../../sanity.types";
+import { imageUrl } from "@/app/lib/imageUrl";
 
-const COLORS_TOP = ["#1367C6", "#13FFAA", "#CE84CF", "#DD335C"]
+const COLORS_TOP = ["#1367C6", "#13FFAA", "#CE84CF", "#DD335C"];
 
-const Hero = () => {
+const Hero = ({ personalDetails }: { personalDetails: PersonalDetails }) => {
   const color = useMotionValue(COLORS_TOP[0]);
 
   useEffect(() => {
     animate(color, COLORS_TOP, {
-      ease: 'easeInOut',
+      ease: "easeInOut",
       duration: 10,
       repeat: Infinity,
-      repeatType: 'mirror',
-    })
-  }, [])
+      repeatType: "mirror",
+    });
+  }, []);
 
-  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})`
-  const border = useMotionTemplate`1px solid ${color}`
-  const boxShadow = useMotionTemplate`0px 4px 24px ${color}`
-
+  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})`;
+  const border = useMotionTemplate`1px solid ${color}`;
+  const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
 
   return (
     <motion.section
@@ -41,20 +47,22 @@ const Hero = () => {
           Hi, I am
         </p>
         <h1 className="max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black sm:leading-tight leading-[42px] text-transparent text-4xl sm:text-5xl md:text-7xl">
-          Subhan Anwer
+          {personalDetails.name}
         </h1>
-        {/* SEO tags */}
+        {/* SEO tags - Not Visible */}
         <p className="sr-only">
           Frontend Developer in Karachi, Website Developer, Next.js Expert,
           Tailwind CSS UI Designer, JavaScript Coder, Subhan Anwer Portfolio
         </p>
 
-        <Image
-          src="/profilepic.png"
-          alt="Subhan Anwer profile photo - frontend website developer"
-          width={250}
-          height={250}
-        />
+        {personalDetails.profileImage && (
+          <Image
+            src={imageUrl(personalDetails.profileImage).url()}
+            alt="Subhan Anwer profile photo - frontend website developer"
+            width={250}
+            height={250}
+          />
+        )}
         <div className="flex flex-col sm:flex-row bg-white/10 shadow-xl p-3 rounded-3xl justify-center items-center sm:space-x-2 gap-3 mb-4 sm:mt-0 mt-6">
           <div className="flex items-center justify-center space-x-2">
             <Image
@@ -79,12 +87,10 @@ const Hero = () => {
               className="rounded-2xl mx-auto"
             />
           </div>
-          <p>80+ Happy Clients</p>
+          <p>{personalDetails.happyClients}+ Happy Clients</p>
         </div>
 
-        <p className="my-6 max-w-xl ">
-          Frontend & Website Developer from Karachi, with 2+ years of experience
-        </p>
+        <p className="my-6 max-w-xl ">{personalDetails.about}</p>
 
         <Link
           href="/SUBHAN_ANWER_RESUME.pdf"
@@ -117,6 +123,6 @@ const Hero = () => {
       </div>
     </motion.section>
   );
-}
+};
 
-export default Hero
+export default Hero;
