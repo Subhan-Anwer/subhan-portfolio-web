@@ -13,6 +13,103 @@
  */
 
 // Source: schema.json
+export type Services = {
+  _id: string;
+  _type: "services";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  description?: string;
+  serialOrder?: number;
+};
+
+export type TechStack = {
+  _id: string;
+  _type: "techStack";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  techName?: string;
+  techLogo?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  serialOrder?: number;
+};
+
+export type SanityImageCrop = {
+  _type: "sanity.imageCrop";
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+};
+
+export type SanityImageHotspot = {
+  _type: "sanity.imageHotspot";
+  x?: number;
+  y?: number;
+  height?: number;
+  width?: number;
+};
+
+export type CodeStats = {
+  _id: string;
+  _type: "codeStats";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  statNumber?: string;
+  statTitle?: string;
+  statDescription?: string;
+};
+
+export type PersonalDetails = {
+  _id: string;
+  _type: "personalDetails";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cv?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+    };
+    media?: unknown;
+    _type: "file";
+  };
+  about?: string;
+  happyClients?: number;
+  phoneNumber?: string;
+  email?: string;
+  address?: string;
+  mapLink?: string;
+};
+
 export type SanityImagePaletteSwatch = {
   _type: "sanity.imagePaletteSwatch";
   background?: string;
@@ -48,22 +145,6 @@ export type SanityImageMetadata = {
   blurHash?: string;
   hasAlpha?: boolean;
   isOpaque?: boolean;
-};
-
-export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
-  x?: number;
-  y?: number;
-  height?: number;
-  width?: number;
-};
-
-export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
 };
 
 export type SanityFileAsset = {
@@ -132,12 +213,16 @@ export type Slug = {
 };
 
 export type AllSanitySchemaTypes =
+  | Services
+  | TechStack
+  | SanityImageCrop
+  | SanityImageHotspot
+  | CodeStats
+  | PersonalDetails
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
   | SanityImageMetadata
-  | SanityImageHotspot
-  | SanityImageCrop
   | SanityFileAsset
   | SanityAssetSourceData
   | SanityImageAsset
@@ -145,3 +230,103 @@ export type AllSanitySchemaTypes =
   | Slug;
 
 export declare const internalGroqTypeReferenceTo: unique symbol;
+
+// Source: src\sanity\lib\getCodeStats.ts
+// Variable: CODE_STATS_QUERY
+// Query: *[_type == "codeStats"]
+export type CODE_STATS_QUERY_RESULT = Array<{
+  _id: string;
+  _type: "codeStats";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  statNumber?: string;
+  statTitle?: string;
+  statDescription?: string;
+}>;
+
+// Source: src\sanity\lib\getPersonalDetails.ts
+// Variable: PERSONAL_DETAILS_QUERY
+// Query: *[_type == "personalDetails"][0]
+export type PERSONAL_DETAILS_QUERY_RESULT = {
+  _id: string;
+  _type: "personalDetails";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cv?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+    };
+    media?: unknown;
+    _type: "file";
+  };
+  about?: string;
+  happyClients?: number;
+  phoneNumber?: string;
+  email?: string;
+  address?: string;
+  mapLink?: string;
+} | null;
+
+// Source: src\sanity\lib\getServices.ts
+// Variable: SERVICES_QUERY
+// Query: *[_type == "services"] | order(serialOrder asc)
+export type SERVICES_QUERY_RESULT = Array<{
+  _id: string;
+  _type: "services";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  description?: string;
+  serialOrder?: number;
+}>;
+
+// Source: src\sanity\lib\getTechStack.ts
+// Variable: TECH_STACK_QUERY
+// Query: *[_type == "techStack"] | order(serialOrder asc) {                    _id,                    techName,                    techLogo,                    serialOrder                }
+export type TECH_STACK_QUERY_RESULT = Array<{
+  _id: string;
+  techName: string | null;
+  techLogo: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  serialOrder: number | null;
+}>;
+
+// Query TypeMap
+import "@sanity/client";
+declare module "@sanity/client" {
+  interface SanityQueries {
+    '\n            *[_type == "codeStats"]\n        ': CODE_STATS_QUERY_RESULT;
+    '\n            *[_type == "personalDetails"][0] \n        ': PERSONAL_DETAILS_QUERY_RESULT;
+    '\n            *[_type == "services"] | order(serialOrder asc)\n        ': SERVICES_QUERY_RESULT;
+    '\n            *[_type == "techStack"] | order(serialOrder asc) {\n                    _id,\n                    techName,\n                    techLogo,\n                    serialOrder\n                }\n        ': TECH_STACK_QUERY_RESULT;
+  }
+}
