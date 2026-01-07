@@ -3,8 +3,7 @@ import { sanityFetch } from "./live";
 
 export const getPersonalDetails = async () => {
   const PERSONAL_DETAILS_QUERY = defineQuery(`
-            *[_type == "personalDetails"][0] 
-            
+            *[_type == "personalDetails"][0]
         `);
 
   try {
